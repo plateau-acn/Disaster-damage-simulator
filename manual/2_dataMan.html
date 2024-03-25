@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>データの準備 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="データの準備 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="データの準備">データの準備</h1>
+
+<h1 id="1-データ準備マニュアルについて">1. データ準備マニュアルについて</h1>
+<p>損害額シミュレータ（以下「本システム」という。）を動かすために事前準備すべきデータとその準備手順を記載しています。</p>
+<h1 id="2-データ準備手順">2. データ準備手順</h1>
+<p>本システムで必要となるデータの準備は以下の手順で行います。</p>
+<h2 id="2-1-3d都市モデルの変換">2-1. 3D都市モデルの変換</h2>
+<p>CityGML形式の3D都市モデルをファイルジオデータベース形式（FGDB形式）に変換するための手順です。サンプルデータとして静岡県牧之原市のデータ※1が格納されています。</p>
+<ul>
+<li><p><a href="https://www.geospatial.jp/ckan/dataset/plateau">3D都市モデル「CityGML(v2)」</a>をダウンロードください。v1では動きませんのでご注意ください。</p>
+</li>
+<li><p>CityGML形式からFGDB形式への変換はESRI社が公開している「<a href="https://github.com/EsriJapan/3D-CityModel-ConversionTools-for-ArcGIS-v2">3D-CityModel-ConversionTools-for-ArcGIS-v2</a>」の手順に沿って変換してください。ただし、この変換を行うにはArcGIS Proのエクステンション（有料オプション）である「ArcGIS 3D Analyst」が必要となりますのでご注意してください。</p>
+</li>
+</ul>
+<h2 id="2-2-洪水浸水想定区域データの変換">2-2. 洪水浸水想定区域データの変換</h2>
+<p>シェープ形式の「国土数値情報 洪水浸水想定区域データ（第3.0版）」をFGDB形式に変換するための手順です。サンプルデータとして静岡県の「計画規模と想定最大規模」※2が格納されています。</p>
+<ul>
+<li><p>シェープ形式の<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31-v3_0.html">洪水浸水想定区域データ</a>をダウンロードしてください。</p>
+</li>
+<li><p>ArcGIS Proを起動し、プロジェクトファイルを作成します。（プロジェクトファイル名に指定はありません。手順書上は「Myproject1」としています。）</p>
+</li>
+<li><p>カタログウィンドウ上で「フォルダー接続の追加」を行い、先ほどダウンロードしたシェープファイルをプロジェクトファイルに接続します。<br>
+<img src="../resources/dataMan/dataMan_001.png" alt=""></p>
+</li>
+<li><p>変換する計画規模のデータをマップにドラッグ&amp;ドロップをして追加し、確認します。</p>
+</li>
+<li><p>[解析]タブ→[ツール]→[ジオプロセシング]ウィンドウのツールの検索窓に「マージ（Merge)」と入力 → [マージ(Merge)]と入力という手順により、「マージ（Marge）」ツールを起動します。</p>
+</li>
+<li><p>①入力データセットを指定し、②出力データセットで「C:\plateau\data\hazard_data\洪水浸水想定区域.gdb」に 「計画規模」の名称で設定し、③[フィールドマップ]の「A31_102」の[プロパティ]で[エイリアス]を「河川名」と設定し、実行をクリックします。エイリアス一覧は<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31-v3_0.html">サイト</a>をご覧ください。</p>
+</li>
+<li><p>FGDB形式に変換されたことが確認できます。<br>
+<img src="../resources/dataMan/dataMan_002.png" alt=""></p>
+</li>
+<li><p>変換する想定最大規模のデータをマップにドラッグ&amp;ドロップをして追加し、確認します。</p>
+</li>
+<li><p>[解析]タブ→[ツール]→[ジオプロセシング]ウィンドウのツールの検索窓に「マージ（Merge）」と入力という手順により、[マージ（Merge）] ツールを起動します。</p>
+</li>
+<li><p>ジオプロセシングツールである「マージ（Merge）」ツールを使用し、①入力データセットを指定し、②出力データセットで「C:\plateau\data\hazard_data\洪水浸水想定区域.gdb」に「想定最大規模」の名称で設定し、③[フィールドマップ]の「A31_202」の[プロパティ]で[エイリアス]を「河川名」と設定し、実行をクリックします。エイリアス一覧は<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31-v3_0.html">サイト</a>をご覧ください。</p>
+</li>
+<li><p>FGDB形式に変換されたことが確認できます。<br>
+<img src="../resources/dataMan/dataMan_003.png" alt=""></p>
+</li>
+</ul>
+<h2 id="2-3-契約フラグを立てるためのデータ準備">2-3. 契約フラグを立てるためのデータ準備</h2>
+<p>契約フラグを立てるためには、契約物件一覧の「緯度経度」を記載したCSVデータをFGDB形式に変換します。</p>
+<ul>
+<li>契約フラグを立てたい物件の「緯度経度」が書かれたCSVファイルを準備してください。1行目はタイトル行のため、データは記載しないようご注意ください。タイトル名は任意です。以下のようなサンプルCSVを作成してください。契約フラグを立てたい建物の分だけ緯度経度の行を増やしてください。ファイル名は任意です。<br></li>
+</ul>
+<p><img src="../resources/dataMan/dataMan_009.png" alt=""></p>
+<br>
+- ArcGIS Pro を起動します。
+<ul>
+<li>[解析]タブ→[ツール]→[ジオプロセシング]ウィンドウの検索窓に「xy」と入力→[XYテーブル→ポイント]ツールをクリックという手順を踏んだ上で、更に以下の設定を行い、[実行]をクリックします。入力テーブルには上記で作成したCSVファイルを指定してください。<br>
+<img src="../resources/dataMan/dataMan_005.png" alt=""></li>
+</ul>
+<h2 id="2-4-設定ファイルの更新">2-4. 設定ファイルの更新</h2>
+<p>「C:\plateau\tools\tables」に以下の3つのファイルがあります。ダミーの値が設定されているので、適切に修正ください。いずれも「用途×構造種別」ごとに値を設定する必要があります。用途と構造種別の番号は、<a href="https://www.mlit.go.jp/plateau/file/libraries/doc/plateau_doc_0001_ver03.pdf">製品仕様書</a>をご確認ください。<br>
+用途：製品仕様書のP118の&quot;Building_usage.xml&quot;を参照してください。<br>
+構造種別：製品仕様書のP133の&quot;BuildingDetailAttribute_buildingStructureType.xml &quot;を参照してください。<br></p>
+<ul>
+<li>評価額_建物単価.csv：1平米あたりの単価[円]を記載します。</li>
+<li>浸水損傷率_建物.csv：浸水深あたりの損害率を記載します。</li>
+<li>土砂損傷率_建物.csv：堆積深あたりの損害率を記載します。<br></li>
+</ul>
+<p>評価額のCSVイメージ<br>
+<img src="../resources/dataMan/dataMan_007.png" alt=""></p>
+<p>損傷率のCSVイメージ<br>
+<img src="../resources/dataMan/dataMan_008.png" alt=""></p>
+<h2 id="3-出典">3. 出典</h2>
+<p>※1 「3D都市モデルのサンプルデータ」を掲載しております。</p>
+<ul>
+<li>出典：<a href="https://www.geospatial.jp/ckan/dataset/plateau">国土交通省ホームページ</a></li>
+<li><a href="https://www.geospatial.jp/ckan/dataset/plateau">「3D都市モデル」（国土交通省）</a>を加工して作成</li>
+</ul>
+<p>※2 「浸水想定区域のサンプルデータ」も掲載しております。</p>
+<ul>
+<li>出典：<a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31-v3_0.html">国土交通省国土数値情報ダウンロードサイト</a></li>
+<li><a href="https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-A31-v3_0.html">「国土数値情報（洪水浸水想定区域データ）」（国土交通省）</a>を加工して作成</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>土砂APIのインターフェース仕様 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="土砂APIのインターフェース仕様 ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="土砂apiのインターフェース仕様">土砂APIのインターフェース仕様</h1>
+
+<p>利用者自らが土砂APIを準備する必要があり、そのためのインターフェース仕様を記載しています。これに沿ったAPIを作成すれば、土砂API（土砂API 操作マニュアル参照）の利用が可能となります。</p>
+<h3 id="リクエスト">リクエスト</h3>
+<ul>
+<li>概要：土砂エリア生成リクエスト</li>
+<li>アクセスURL：https://[サーバごとに設定]/make_landslide_prediction</li>
+<li>メソッド：POST</li>
+<li>形式：Json</li>
+<li>文字コード：UTF-8</li>
+<li>引数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>変数</th>
+<th>出現条件</th>
+<th>出現回数</th>
+<th>必須</th>
+<th>値（型）</th>
+<th>例</th>
+<th>内容</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>lat</td>
+<td></td>
+<td>1</td>
+<td>○</td>
+<td>実数</td>
+<td>35.693125</td>
+<td>中心緯度</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>lon</td>
+<td></td>
+<td>1</td>
+<td>○</td>
+<td>実数</td>
+<td>139.765572</td>
+<td>中心軽度</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>landslide_height</td>
+<td></td>
+<td>1</td>
+<td>○</td>
+<td>整数</td>
+<td>300</td>
+<td>堆積高さ(cm)</td>
+<td>堆積物の地表面からの高さ（cm）</td>
+</tr>
+<tr>
+<td>4</td>
+<td>landslide_angle</td>
+<td></td>
+<td>1</td>
+<td>○</td>
+<td>実数</td>
+<td>2.29</td>
+<td>堆積角度(°)</td>
+<td>堆積物と地表が交わる接点角度（°）</td>
+</tr>
+<tr>
+<td>5</td>
+<td>landslide_radius</td>
+<td></td>
+<td>1</td>
+<td>○</td>
+<td>整数</td>
+<td>100</td>
+<td>計算範囲(m)</td>
+<td>計算を実施する半径（m）　※～600ｍまで対応</td>
+</tr>
+</tbody>
+</table>
+<p>Json形式による土砂エリア生成リクエストの例
+<img src="../resources/devMan/devMan_006.png" alt=""></p>
+<h3 id="レスポンス">レスポンス</h3>
+<ul>
+<li>概要：土砂エリア生成レスポンス</li>
+<li>形式：GeoJson</li>
+<li>レスポンス</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>変数</th>
+<th>出現条件</th>
+<th>出現回数</th>
+<th>値（型）</th>
+<th>例</th>
+<th>内容</th>
+<th>備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Feature/properties/LandslideSurface</td>
+<td></td>
+<td>*</td>
+<td>実数</td>
+<td>560</td>
+<td>堆積面高さ（cm）</td>
+<td>TP標高</td>
+</tr>
+</tbody>
+</table>
+<p>GeoJson形式による土砂エリア生成レスポンスのGeoJson例
+<img src="../resources/devMan/devMan_007.png" alt=""></p>
+<h3 id="レスポンスコード">レスポンスコード</h3>
+<ul>
+<li>概要：レポート作成レスポンスコード一覧（基本ベースはHTTPステータスコード準拠、特記部分のみ記載）</li>
+<li>形式：Json</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>No.</th>
+<th>レスポンスコード</th>
+<th>要因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>201 Created</td>
+<td>リクエストが受理され、GeoJsonが作られた場合</td>
+</tr>
+<tr>
+<td>2</td>
+<td>204 No Content</td>
+<td>リクエストは受理されたが、GeoJsonが生成されない場合      ・対象エリア範囲外（DEMデータ整備範囲外）      ・入力された浸水高で浸水が広がらない など</td>
+</tr>
+<tr>
+<td>3</td>
+<td>400 Bad Request</td>
+<td>リクエストで受理できない場合      ・指定された計算範囲(m)が範囲外 など</td>
+</tr>
+<tr>
+<td>4</td>
+<td>403 Forbidden</td>
+<td>認証しているIPアドレス以外からリクエストを受信した場合</td>
+</tr>
+<tr>
+<td>5</td>
+<td>405 Method Not   Allowed</td>
+<td>リクエスト受信がPOSTではない場合</td>
+</tr>
+<tr>
+<td>6</td>
+<td>422 Unprocessable   Entity</td>
+<td>リクエスト受信したJSON形式のフォーマット異常の場合</td>
+</tr>
+<tr>
+<td>7</td>
+<td>500 Internal Server Error</td>
+<td>リクエストは受理したが、GeoJsonの生成時にエラーが発生した場合</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

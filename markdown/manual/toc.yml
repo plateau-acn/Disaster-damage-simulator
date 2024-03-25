@@ -1,0 +1,26 @@
+- name: 損害額シミュレータ
+  href: ../index.md
+- name: 事前準備
+  items:
+  - name: 環境構築手順書
+    href: 1_devMan.md
+  - name: データの準備
+    href: 2_dataMan.md
+- name: 利用方法
+  items:
+  - name: 概要
+    href: 3_gaiyou.md
+  - name: 浸水API
+    href: 4_sinsuiAPI.md
+  - name: 土砂API
+    href: 5_dosyaAPI.md
+  - name: 浸水想定区域：計画規模
+    href: 6_souteisinsuikuiki_keikaku.md
+  - name: 浸水想定区域：最大規模
+    href: 7_souteisinsuikuiki_saidai.md
+- name: 参考資料
+  items:
+  - name: 浸水APIのインターフェース仕様
+    href: 8_sinsuiAPI_IF.md
+  - name: 土砂APIのインターフェース仕様
+    href: 9_dosyaAPI_IF.md

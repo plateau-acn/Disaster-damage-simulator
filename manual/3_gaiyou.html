@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>損害額シミュレータ </title>
+      <title>概要 </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="損害額シミュレータ ">
+      <meta name="title" content="概要 ">
     
     
-      <link rel="shortcut icon" href="favicon.ico">
-      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
-      <link rel="stylesheet" href="styles/docfx.css">
-      <link rel="stylesheet" href="styles/main.css">
-      <meta property="docfx:navrel" content="toc.html">
-      <meta property="docfx:tocrel" content="manual/toc.html">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
     
-    <meta property="docfx:rel" content="">
+    <meta property="docfx:rel" content="../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
 
-              <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="resources/logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -77,11 +77,23 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="損害額シミュレータ">損害額シミュレータ</h1>
+<h1 id="概要">概要</h1>
 
-<p>3D都市モデルや属性情報を利用して、水害や土砂災害の簡易シミュレーションを行い、建物の被害率や損害額などの算出を行うシステムです。</p>
-<p><img src="resources/index1.png" alt=""><br><br>
-<img src="resources/index2.png" alt=""></p>
+<h1 id="1-災害シミュレーションについて">1. 災害シミュレーションについて</h1>
+<p>本システムでは、3種類の災害シミュレーションの方法を提供しています。いずれかの方法で災害をシミュレーションし、その被害に応じた損害額の計算を行います。</p>
+<ul>
+<li>浸水シミュレーション</li>
+<li>土砂災害シミュレーション</li>
+<li>浸水想定区域を活用したシミュレーション</li>
+</ul>
+<h3 id="浸水シミュレーションについて">浸水シミュレーションについて</h3>
+<p>「浸水API」を利用して水害時の浸水シミュレーションを行います。利用者は浸水深を把握している地点の各種情報を入力することで、損害額を把握できます。<br>
+ただし、これを実行するには、参考資料の「浸水APIのインターフェース仕様」に記載されたAPI環境を準備する必要があります。</p>
+<h3 id="土砂災害シミュレーションについて">土砂災害シミュレーションについて</h3>
+<p>「土砂API」を利用して土砂災害シミュレーションを行います。利用者は土砂災害を把握している地点の各種情報を入力することで、損害額を把握できます。<br>
+ただし、これを実行するには、参考資料の「土砂APIのインターフェース仕様」に記載されたAPI環境を準備する必要があります。</p>
+<h3 id="洪水浸水想定区域データを活用したシミュレーションについて">洪水浸水想定区域データを活用したシミュレーションについて</h3>
+<p>国土交通省が公開している「国土数値情報　洪水浸水想定区域データ」を利用して被害エリアを指定し、その被害エリアの損害額を把握できます。</p>
 
 </article>
           </div>
@@ -111,8 +123,8 @@
       </footer>
     </div>
 
-    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="styles/docfx.js"></script>
-    <script type="text/javascript" src="styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

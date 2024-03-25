@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>操作マニュアル </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="操作マニュアル ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="操作マニュアル">操作マニュアル</h1>
+
+<h1 id="1-本書について">1. 本書について</h1>
+<p>本書では、損害額シミュレータ（以下「本システム」という。）の操作手順について記載しています。</p>
+<h1 id="2-使い方">2. 使い方</h1>
+<h2 id="2-1-本システムの起動">2-1. 本システムの起動</h2>
+<ul>
+<li><p>「plateau_hazard_simulation.aprx」をダブルクリックし、ArcGIS Pro を起動ください。※起動時に認証が求められた場合は、アカウントをお持ちと思いますので、そのID/PWでサインインください。
+<img src="../resources/userMan/userMan_001.png" alt=""><br><br></p>
+</li>
+<li><p>タスクウィンドウを表示させます。
+<img src="../resources/userMan/userMan_002.png" alt=""><br><br></p>
+</li>
+</ul>
+<h2 id="2-2-12-シミュレーション前の実行">2-2. 「1.2. シミュレーション前」の実行</h2>
+<ul>
+<li><p>シミュレーションを行いたい3D都市モデル（FGDB形式）を指定し、読み込みます。
+<img src="../resources/userMan/userMan_003.png" alt=""><br><br></p>
+</li>
+<li><p>読み込んだ3D都市モデル（FGDB形式）に対して評価額を算出します。
+<img src="../resources/userMan/userMan_004.png" alt=""><br><br></p>
+</li>
+</ul>
+<h2 id="2-3-3-被害対象シミュレーションデータ作成の実行">2-3. 「3. 被害対象シミュレーションデータ作成」の実行</h2>
+<h3 id="2-3-1-事前処理">2-3-1. 事前処理</h3>
+<ul>
+<li>被害シミュレーションデータの事前処理を行います。
+<img src="../resources/userMan/userMan_005.png" alt=""><br><br></li>
+</ul>
+<h3 id="2-3-2-浸水apiの場合">2-3-2. 浸水APIの場合</h3>
+<ul>
+<li><p>緯度・経度・浸水深などを指定してシミュレーションを行う場合にこの操作を行います。複数の地点の浸水深を指定したい場合は、この処理を繰り返してください。
+<img src="../resources/userMan/userMan_006.png" alt=""><br><br>
+<img src="../resources/userMan/userMan_007.png" alt=""><br><br></p>
+</li>
+<li><p>指定終わりましたら、シミュレーション結果と建物情報を結合します。この作業が終わりましたら[2-3-6. 事後処理]の手順を実行ください。
+<img src="../resources/userMan/userMan_008.png" alt=""><br><br></p>
+</li>
+</ul>
+<h3 id="2-3-3-土砂apiの場合">2-3-3. 土砂APIの場合</h3>
+<ul>
+<li><p>緯度・経度・堆積深などを指定してシミュレーションを行う場合にこの操作を行います。複数の地点の堆積深を指定したい場合は、この処理を繰り返してください。
+<img src="../resources/userMan/userMan_009.png" alt=""><br><br>
+<img src="../resources/userMan/userMan_010.png" alt=""><br><br></p>
+</li>
+<li><p>指定終わりましたら、シミュレーション結果と建物情報を結合します。この作業が終わりましたら[2-3-6. 事後処理]の手順を実行ください。
+<img src="../resources/userMan/userMan_011.png" alt=""><br><br></p>
+</li>
+</ul>
+<h3 id="2-3-4-浸水想定区域計画規模の場合">2-3-4. 浸水想定区域：計画規模の場合</h3>
+<ul>
+<li>計画規模の浸水想定区域から浸水エリアを指定します。この作業が終わりましたら[2-3-6. 事後処理]の手順を実行ください。
+<img src="../resources/userMan/userMan_012.png" alt=""><br><br>
+<img src="../resources/userMan/userMan_013.png" alt=""><br><br></li>
+</ul>
+<h3 id="2-3-5-浸水想定区域想定最大規模の場合">2-3-5. 浸水想定区域：想定最大規模の場合</h3>
+<ul>
+<li>想定最大規模の浸水想定区域から浸水エリアを指定します。この作業が終わりましたら[2-3-6. 事後処理]の手順を実行ください。
+<img src="../resources/userMan/userMan_014.png" alt=""><br><br>
+<img src="../resources/userMan/userMan_015.png" alt=""><br><br></li>
+</ul>
+<h3 id="2-3-6-事後処理">2-3-6. 事後処理</h3>
+<ul>
+<li>被害シミュレーションデータの共通的な事後処理を行います。
+<img src="../resources/userMan/userMan_016.png" alt=""><br><br></li>
+</ul>
+<h2 id="2-4-4-シミュレーション後操作の実行">2-4. 「4. シミュレーション後操作」の実行</h2>
+<ul>
+<li><p>損傷率と損害額を算出します。
+<img src="../resources/userMan/userMan_017.png" alt=""><br><br></p>
+</li>
+<li><p>建物情報に契約情報と建物不動産IDを紐づけます。
+<img src="../resources/userMan/userMan_018.png" alt=""><br><br></p>
+</li>
+<li><p>ポップアップなどで使用する論理名(エイリアス)を設定します。
+<img src="../resources/userMan/userMan_019.png" alt=""><br><br></p>
+</li>
+</ul>
+<h2 id="2-5-シミュレーション結果を確認する">2-5. シミュレーション結果を確認する</h2>
+<p>これで全ての処理が終わりました。建物1つ1つをクリックすると、詳細な情報を確認できます。</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
